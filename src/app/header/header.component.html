@@ -1,0 +1,27 @@
+<nav class='navbar navbar-expand-md fixed-toṕ navbar-dark bg-primary mat-elevation-z6'>
+  <a class='navbar-brand' href='#'>
+    Pediatría Médica CPG
+  </a>
+  <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+      <span class="fas fa-bars"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Nuestros Médicos<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pacientes<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ubicación y Contacto<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <ul class='navbar-nav mr-auto'>
+      <li class nav-item>
+        <button type='button' class='btn btn-outline-secondary'>Aviso de privacidad</button>
+      </li>
+    </ul>
+  </div>    
+</nav>
