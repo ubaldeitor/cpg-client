@@ -1,4 +1,4 @@
-<nav class='navbar navbar-expand-md fixed-toṕ navbar-dark bg-primary mat-elevation-z6'>
+<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
   <a class='navbar-brand' href='#'>
     Pediatría Médica CPG
   </a>
@@ -6,10 +6,10 @@
       <span class="fas fa-bars"></span>
     </button>
   
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
-      <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault" [ngbCollapse]="!isCollapsed">
+      <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Nuestros Médicos<span class="sr-only">(current)</span></a>
+        <a routerLink="/nuestros-medicos" routerLinkActive="active" class="nav-link">Nuestros Médicos<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pacientes<span class="sr-only">(current)</span></a>
@@ -17,11 +17,16 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Ubicación y Contacto<span class="sr-only">(current)</span></a>
       </li>
-    </ul>
-    <ul class='navbar-nav mr-auto'>
-      <li class nav-item>
-        <button type='button' class='btn btn-outline-secondary'>Aviso de privacidad</button>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>    
+</nav>
+<nav class='navbar justify-content-end'>
+  <ul class='navbar-nav'>
+      <li class='nav-item'>
+        <button type='button' class='btn btn-outline-secondary'>Aviso de privacidad</button>
+      </li>
+  </ul>
 </nav>

@@ -1,7 +1,10 @@
 .main-banner {
-    height:auto;
+    height:200%;
     width: 100%;
     padding: 15px;
+    /*background: url('./../../assets/image/CPG_banner1.svg');*/
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .submenu {
