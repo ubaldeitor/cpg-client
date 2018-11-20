@@ -1,0 +1,7 @@
+.img-circle {
+    clip-path: url("#circular-mask");
+}
+
+.doctores-content {
+    margin: 15px;
+}

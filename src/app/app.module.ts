@@ -13,6 +13,7 @@ import { NuestrosMedicosComponent } from './nuestros-medicos/nuestros-medicos.co
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { BlogComponent } from './blog/blog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'nuestros-medicos', component: NuestrosMedicosComponent },
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    HttpClientModule
   ],
   providers: [MatIconRegistry],
   bootstrap: [AppComponent]

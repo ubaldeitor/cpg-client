@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorsService } from '../services/doctors.service';
+import { DoctorsModel } from '../models/doctors_model';
 
 @Component({
   selector: 'app-nuestros-medicos',
   templateUrl: './nuestros-medicos.component.html',
-  styleUrls: ['./nuestros-medicos.component.css']
+  styleUrls: ['./nuestros-medicos.component.css'],
+  providers:[DoctorsService]
 })
 export class NuestrosMedicosComponent implements OnInit {
 
-  constructor() { }
+  public doctores: Array<DoctorsModel> = [];
+
+  constructor(private doctorsService: DoctorsService) { }
 
   ngOnInit() {
+    this.doctorsService.getAllDoctors().subscribe(
+       (tmpDoctores:Array<DoctorsModel>) => {
+          this.doctores = tmpDoctores;
+          console.log(this.doctores);
+        }
+    );
   }
+
+
 
 }

@@ -1,3 +1,28 @@
-<p>
-  nuestros-medicos works!
-</p>
+<svg width="0" height="0">
+  <defs>
+    <clipPath id='circular-mask'>
+      <circle cx="75" cy="75" r="75" stroke="black" stroke-width="0"/>
+    </clipPath>
+  </defs>
+</svg>
+<div class="row doctores-content">
+  <div class="col-md-4">
+    <h1>Nuestros doctores.</h1>
+  </div>
+  <div class="col-md-8 table-responsive">
+    <table class="table table-sm">
+      <tr *ngFor="let doctor of doctores.doctores">
+        <td style='width: 20%;'>
+          <img src="{{doctor.url_foto}}" style="height:150px;" class='img-circle'/>
+        </td>
+        <td style='width: 80%;'>
+          <ul>
+            <li>Dr. {{doctor.nombre}} {{doctor.apellido_paterno}} {{doctor.apellido_materno}}</li>
+            <li>{{doctor.id_especialidad}}</li>
+            <li>{{doctor.experiencia}}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
