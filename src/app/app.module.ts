@@ -14,6 +14,9 @@ import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MapComponent } from './components/map/map.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 const appRoutes: Routes = [
   { path: 'nuestros-medicos', component: NuestrosMedicosComponent },
@@ -32,7 +35,8 @@ const appRoutes: Routes = [
     NuestrosMedicosComponent,
     UbicacionComponent,
     PacientesComponent,
-    BlogComponent
+    BlogComponent,
+    MapComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -45,7 +49,8 @@ const appRoutes: Routes = [
     MatIconModule,
     MatTooltipModule,
     NgbCollapseModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [MatIconRegistry],
   bootstrap: [AppComponent]
