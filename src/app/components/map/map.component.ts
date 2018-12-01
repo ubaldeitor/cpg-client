@@ -25,17 +25,16 @@ export class MapComponent implements OnInit {
   marker: OlFeature;
   vectorSource: Vector;
   markerVectorLayer: VectorLayer;
-  styles: any;
+  styleMarker: Style;
 
   ngOnInit() {}
 
   public drawMap(consultorios: Array<ConsultorioModel>) {
     console.log('Consultorios found:', consultorios);
-    this.styles = new Style({
+    this.styleMarker = new Style({
       text: new Text({
-        text: fa.faMapMarker,
-        font: 'normal 18px FontAwesome',
-        textBaseline: 'Bottom',
+        text: '\uf041',
+        font: 'normal 38px FontAwesome',
         fill: new Fill({
         color: 'blue'
       })
@@ -65,19 +64,20 @@ export class MapComponent implements OnInit {
       //Add markers
       consultorios.forEach((consultorio) => {
         this.marker = new OlFeature({
-          name: 'markerPoint',
+          name: 'textMarker',
           geometry: new Point(
             olProj.fromLonLat([consultorio.longitud, consultorio.latitud])
           ),  // Coordinates for site
         });
-        this.marker.setStyle(this.styles);
+        // this.marker.setStyle(this.styleMarker);
         this.vectorSource = new Vector({
           features: [this.marker]
         });
         this.markerVectorLayer = new VectorLayer({
-          source: this.vectorSource
-          }
+          source: this.vectorSource,
+          style: this.styleMarker
         });
+
         this.map.addLayer(this.markerVectorLayer);
       });
     }
