@@ -1,5 +1,5 @@
-<div class='row'>
-  <div class='col-md-12' class="table-responsive">
+<div class="row">
+  <div class="col-md-12" class="table-responsive">
     <h1>Para hacer una cita, llama a los telefonos:</h1>
     <table>
       <table>
@@ -12,11 +12,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr *ngFor="let ubicacion of this.ubicacionesArr.data">
+            <td>{{ubicacion.especialidad.descripcion}}</td>
+            <td>{{ubicacion.nombre}} {{ubicacion.apellido_paterno}} {{ubicacion.apellido_materno}}</td>
+            <td><span *ngFor='let ubicacionItem of ubicacion.ubicaciones'>
+                 <span *ngFor = 'let contacto of ubicacionItem.contactos'>
+                   <b>{{contacto.tipo_contacto}}</b>: <b>{{contacto.valor_contacto}}</b>
+                 </span>
+            </span></td>
+            <td>
+              <span *ngFor='let horario of ubicacion.horarios'>
+                <p>Dia: {{horario.dia}} De: {{horario.hora_inicio}} A: {{horario.hora_fin}} <br />
+                </p>  
+              </span>
+            </td>
           </tr>
         </tbody>
       </table>
