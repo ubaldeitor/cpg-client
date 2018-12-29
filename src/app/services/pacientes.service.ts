@@ -15,7 +15,7 @@ export class PacientesService {
       'Access-Control-Allow-Origin':'*'
     })
   };
-  private apiKeyAllContactos = '/ubicacion-contacto';
+  private apiKeyAllContactos = '/doctor-ubicacion-horario';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -1,17 +1,16 @@
-import {ContactoModel} from '../models/contacto_model'
+import { ContactoModel } from '../models/contacto_model';
+import { EspecialidadModel } from '../models/especialidad_model';
+import { UbicacionModel } from '../models/ubicacion_model';
+import { HorarioModel } from '../models/horario_model';
 
 export class UbicacionContactoModel {
-    public id: number;
-    public descripcion: string;
-    public calle_numero: string;
-    public colonia: string;
-    public codigo_postal: string;
-    public alcaldia: string;
-    public ciudad: string;
-    public estado: string;
-    public contactos: Array<ContactoModel>;
-    public created_at: any;
-    public updated_at: any;
+    id: number;
+    nombre: string;
+    apellido_paterno: string;
+    apellido_materno: string;
+    especialidad: EspecialidadModel;
+    ubicaciones: Array<UbicacionModel>;
+    horarios: Array<HorarioModel>;
 
     public constructor() {}
 }
