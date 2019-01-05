@@ -17,8 +17,8 @@ export class HacerCitaComponent implements OnInit {
 
   ngOnInit() {
     this.pacientesService.getAllContactos().subscribe(
-      (tmpUbicaciones:Array<UbicacionContactoModel>)=>{
-        this.ubicacionesArr = tmpUbicaciones;
+      resp =>{
+        this.ubicacionesArr = resp['data'];
         console.log(this.ubicacionesArr);
       }
     );

@@ -16,8 +16,8 @@ export class NuestrosMedicosComponent implements OnInit {
 
   ngOnInit() {
     this.doctorsService.getAllDoctors().subscribe(
-       (tmpDoctores:Array<DoctorsModel>) => {
-          this.doctores = tmpDoctores;
+       resp => {
+          this.doctores = resp['data'];
           console.log(this.doctores);
         }
     );

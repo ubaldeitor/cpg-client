@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12" class="table-responsive">
-    <h1>Para hacer una cita, llama a los telefonos:</h1>
+    <h1>Necesitas información, llama a los telefonos:</h1>
     <table>
       <table>
         <thead>
@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ubicacion of this.ubicacionesArr.data">
+          <tr *ngFor="let ubicacion of this.ubicacionesArr">
             <td>{{ubicacion.especialidad.descripcion}}</td>
             <td>{{ubicacion.nombre}} {{ubicacion.apellido_paterno}} {{ubicacion.apellido_materno}}</td>
             <td><span *ngFor='let ubicacionItem of ubicacion.ubicaciones'>

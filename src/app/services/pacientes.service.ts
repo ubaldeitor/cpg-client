@@ -13,13 +13,15 @@ export class PacientesService {
       'Content-Type':  'application/json',
       'Accept': 'application/json',
       'Access-Control-Allow-Origin':'*'
-    })
+    }),
+    "observe?": "response", 
+      "responseType?": "json"
   };
   private apiKeyAllContactos = '/doctor-ubicacion-horario';
 
   constructor(private httpClient: HttpClient) { }
 
   getAllContactos() {
-    return this.httpClient.get<Array<UbicacionContactoModel>>(environment.urlApi + this.apiKeyAllContactos, this.httpOptions);
+    return this.httpClient.get(environment.urlApi + this.apiKeyAllContactos, this.httpOptions);
   }
 }
