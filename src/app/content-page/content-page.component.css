@@ -2,9 +2,9 @@
     height:200%;
     width: 100%;
     padding: 15px;
-    /*background: url('./../../assets/image/CPG_banner1.svg');*/
-    background-size: contain;
-    background-repeat: no-repeat;
+    /* background: url('./../../assets/image/navidadCpg.svg');*/
+    /* background-size: contain;*/
+    /* background-repeat: no-repeat;*/
 }
 
 .submenu {
@@ -26,4 +26,19 @@
 
 .banner-text h1 {
     margin: 20px 20px;
+}
+
+.texto-principal {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 40px;
+}
+
+.subtext {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 28px;
+}
+
+.brand-text {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 28px;
 }

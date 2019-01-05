@@ -16,6 +16,8 @@ import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './components/map/map.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HacerCitaComponent } from './components/hacer-cita/hacer-cita.component';
+import { RecomendarComponent } from './components/recomendar/recomendar.component';
 
 
 const appRoutes: Routes = [
@@ -36,7 +38,9 @@ const appRoutes: Routes = [
     UbicacionComponent,
     PacientesComponent,
     BlogComponent,
-    MapComponent
+    MapComponent,
+    HacerCitaComponent,
+    RecomendarComponent
   ],
   imports: [
     RouterModule.forRoot(
