@@ -11,7 +11,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ubicacion of this.ubicacionesArr">
+          <tr *ngFor="let ubicacion of this.ubicacionesArr; let i = index; ">
             <td>{{ubicacion.especialidad.descripcion}}</td>
             <td>{{ubicacion.nombre}} {{ubicacion.apellido_paterno}} {{ubicacion.apellido_materno}}</td>
             <td><span *ngFor='let ubicacionItem of ubicacion.ubicaciones'>
@@ -20,10 +20,21 @@
                  </span>
             </span></td>
             <td>
-              <span *ngFor='let horario of ubicacion.horarios'>
-                <p>Dia: {{horario.dia}}<br /> De: {{horario.hora_inicio}} A: {{horario.hora_fin}} <br />
-                </p>  
-              </span>
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button"  (click)="isCollapsed[i] = !isCollapsed[i]" [attr.aria-expanded]="!isCollapsed[i]" [attr.data-target]="i">
+                      Horario
+                    </button>
+                  </h2>
+                    <div [attr.id]="i" [ngbCollapse]="!isCollapsed[i]">
+                        <div class="card">
+                            <div class="card-body">
+                                <span *ngFor='let horario of ubicacion.horarios'>
+                                    <p>Dia: {{horario.dia}}<br /> De: {{horario.hora_inicio}} A: {{horario.hora_fin}} <br />
+                                    </p>  
+                                  </span>
+                            </div>
+                        </div>
+                    </div>  
             </td>
           </tr>
         </tbody>

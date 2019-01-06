@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PacientesService } from 'src/app/services/pacientes.service';
 import { UbicacionContactoModel } from 'src/app/models/ubicacion_contacto_model';
+import { isComponent } from '@angular/core/src/render3/instructions';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { UbicacionContactoModel } from 'src/app/models/ubicacion_contacto_model'
 export class HacerCitaComponent implements OnInit {
 
   public ubicacionesArr: Array<UbicacionContactoModel>;
+  public isCollapsed: Array<boolean> = [];
 
   constructor(private pacientesService: PacientesService) { }
 
@@ -20,6 +22,9 @@ export class HacerCitaComponent implements OnInit {
       resp =>{
         this.ubicacionesArr = resp['data'];
         console.log(this.ubicacionesArr);
+        this.ubicacionesArr.forEach(ubicacion => {
+          this.isCollapsed.push(false);
+        });
       }
     );
   }
