@@ -1,8 +1,8 @@
 <div class='row'>
-  <div class='col-md-6'>
+  <div class='col-md-6 table-responsive'>
     <h1>Te esperamos en: </h1>
-    <table *ngFor='let consultorio of consultoriosResponse.consultorios'>
-      <tr>
+    <table class='table table-sm table-striped table-bordered' *ngFor='let consultorio of consultoriosResponse.consultorios'>
+      <tr class='table-primary'>
         <th>Sucursal</th>
         <td>{{consultorio.descripcion}}</td>
       </tr>
